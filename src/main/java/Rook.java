@@ -1,6 +1,6 @@
-public class Pawn extends ChessPiece {
+public class Rook extends ChessPiece {
 
-    public Pawn (String color) {
+    public Rook (String color) {
         super(color);
     };
 
@@ -8,8 +8,8 @@ public class Pawn extends ChessPiece {
         return super.getColor();
     };
 
-    @Override
     public boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
+
         if (line == toLine && column == toColumn) {
             return false;
         };
@@ -18,34 +18,21 @@ public class Pawn extends ChessPiece {
             return false;
         };
 
-        if (getColor().equals("White") && line == 1) {
-            int a = toLine - line;
-            if (a == 1 || a == 2) {
-                toLine = line + a;
-            };
-        };
-
-        if (getColor().equals("Black") && line == 1) {
-            int a = toLine - line;
-            if (a == 1 || a == 2) {
-                toLine = line + a;
-            };
-        };
-
         int a = toLine - line;
-        if (a >= 2) {
-            return false;
+        int b = toColumn - column;
+
+        if (toLine == line) {
+            toColumn = column + b;
         }
-        else if (a == 1) {
+        else if (toColumn == column) {
             toLine = line + a;
         };
-        return false;
+
+    return false;
     };
 
     @Override
     public String getSymbol() {
-    return "P";
-};
-
+        return "R";
+    };
 }
-
