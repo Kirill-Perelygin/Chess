@@ -26,7 +26,7 @@ public class Pawn extends ChessPiece {
             };
         };
 
-        if (getColor().equals("Black") && line == 1) {
+        if (getColor().equals("Black") && line == 6) {
             int a = toLine - line;
             if (a == 1 || a == 2) {
                 toLine = line + a;
