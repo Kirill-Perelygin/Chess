@@ -1,6 +1,6 @@
-public class ChessPiece {
+public abstract class ChessPiece {
     String color;
-    boolean check;
+    boolean check = true;
 
     public ChessPiece (String color) {
         this.color = color;
@@ -9,12 +9,13 @@ public class ChessPiece {
     public String getColor() {
         return color;
     };
-    public abstract canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
-        return boolean;
-    };
 
-    public abstract getSymbol(){
-        return getSymbol;
+    public boolean checkPos(int pos) {
+        return pos >= 0 && pos <= 7;
     }
+
+    public abstract boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn);
+
+    public abstract String getSymbol();
 
 }

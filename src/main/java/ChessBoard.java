@@ -2,8 +2,6 @@ public class ChessBoard {
     public ChessPiece[][] board = new ChessPiece[8][8]; // creating a field for game
     String nowPlayer;
 
-    public static void main(String[] args) {
-
     public ChessBoard(String nowPlayer) {
             this.nowPlayer = nowPlayer;
         }
@@ -53,5 +51,3 @@ public class ChessBoard {
             return pos >= 0 && pos <= 7;
         }
     }
-
-}
