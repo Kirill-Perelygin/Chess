@@ -18,14 +18,16 @@ public class Rook extends ChessPiece {
             return false;
         };
 
-        int a = toLine - line;
-        int b = toColumn - column;
+        int a = Math.abs(toLine - line);
+        int b = Math.abs(toColumn - column);
 
         if (toLine == line) {
             toColumn = column + b;
+            return true;
         }
         else if (toColumn == column) {
             toLine = line + a;
+            return true;
         };
 
     return false;

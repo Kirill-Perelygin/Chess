@@ -22,6 +22,7 @@ public class Pawn extends ChessPiece {
             int a = toLine - line;
             if (a == 1 || a == 2) {
                 toLine = line + a;
+                return true;
             };
         };
 
@@ -29,11 +30,12 @@ public class Pawn extends ChessPiece {
             int a = toLine - line;
             if (a == 1 || a == 2) {
                 toLine = line + a;
+                return true;
             };
         };
 
         int a = toLine - line;
-        if (a >= 2) {
+        if (a > 2) {
             return false;
         }
         else if (a == 1) {

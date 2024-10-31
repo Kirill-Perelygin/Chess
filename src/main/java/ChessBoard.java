@@ -47,6 +47,15 @@ public class ChessBoard {
             System.out.println("Player 1(White)");
         }
 
+        public boolean castling0() {
+        return true;
+        };
+
+        public boolean castling7() {
+            return true;
+        };
+
+
         public boolean checkPos(int pos) {
             return pos >= 0 && pos <= 7;
         }
