@@ -40,8 +40,9 @@ public class Pawn extends ChessPiece {
         }
         else if (a == 1) {
             toLine = line + a;
+            return true;
         };
-        return false;
+        return true;
     };
 
     @Override

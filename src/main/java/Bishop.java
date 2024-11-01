@@ -8,7 +8,19 @@ public class Bishop extends ChessPiece {
     };
 
     public boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
-        return true;
+
+        if (line == toLine || column == toColumn) {
+            return false;
+        };
+
+        if (line > 7 || line < 0 || toLine > 7 || toLine < 0 || column > 7 || column < 0 || toColumn > 7 || toColumn < 0) {
+            return false;
+        };
+
+        if (Math.abs(toLine - line) == Math.abs(toColumn - column))
+            return true;
+
+        return false;
     };
 
     @Override

@@ -25,6 +25,11 @@ public class King extends ChessPiece {
             toColumn = column + b;
             return true;
         };
+
+        public static boolean isUnderAttack(ChessBoard board, int line, int column) {
+            return ;
+        }
+
         return false;
     };
 
