@@ -18,31 +18,32 @@ public class Pawn extends ChessPiece {
             return false;
         };
 
-        if (getColor().equals("White") && line == 1) {
+        if (getColor().equals("White") && line == 1 && toColumn == column) {
             int a = toLine - line;
-            if (a == 1 || a == 2) {
+            if (Math.abs(a) == 1 || Math.abs(a) == 2) {
                 toLine = line + a;
                 return true;
             };
         };
 
-        if (getColor().equals("Black") && line == 6) {
+        if (getColor().equals("Black") && line == 6 && toColumn == column) {
             int a = toLine - line;
-            if (a == 1 || a == 2) {
+            if (Math.abs(a) == 1 || Math.abs(a) == 2) {
                 toLine = line + a;
                 return true;
             };
         };
 
         int a = toLine - line;
-        if (a > 2) {
+        if (Math.abs(a) > 2) {
             return false;
         }
-        else if (a == 1) {
+        else if (Math.abs(a) == 1 && toColumn == column) {
             toLine = line + a;
             return true;
         };
-        return true;
+
+        return false;
     };
 
     @Override

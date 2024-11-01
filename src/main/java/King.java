@@ -26,9 +26,9 @@ public class King extends ChessPiece {
             return true;
         };
 
-        public static boolean isUnderAttack(ChessBoard board, int line, int column) {
+        /* public static boolean isUnderAttack(ChessBoard board, int line, int column) {
             return ;
-        }
+        } */
 
         return false;
     };

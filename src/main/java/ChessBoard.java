@@ -23,6 +23,8 @@ public class ChessBoard {
                     return true;
                 } else return false;
             } else return false;
+
+            if (nowPlayer.equals("White") && 
         }
 
         public void printBoard() {  //print board in console

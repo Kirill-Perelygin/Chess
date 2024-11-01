@@ -17,7 +17,23 @@ public class Queen extends ChessPiece {
             return false;
         };
 
-        return true;
+        if (Math.abs(toLine - line) == Math.abs(toColumn - column)){
+            return true;
+        };
+
+        int a = Math.abs(toLine - line);
+        int b = Math.abs(toColumn - column);
+
+        if (toLine == line) {
+            toColumn = column + b;
+            return true;
+        }
+        else if (toColumn == column) {
+            toLine = line + a;
+            return true;
+        };
+
+        return false;
     };
 
     @Override
