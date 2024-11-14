@@ -27,6 +27,12 @@ public class Horse extends ChessPiece {
             return true;
         };
 
+        if (chessBoard.board[toLine][toColumn] != null) {
+            if (!chessBoard.board[toLine][toColumn].getColor().equals(color)) return true;
+        } else {
+            return true;
+        };
+
         return false;
     };
 

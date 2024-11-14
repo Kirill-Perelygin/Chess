@@ -20,16 +20,31 @@ public class King extends ChessPiece {
         int a = Math.abs(toLine - line);
         int b = Math.abs(toColumn - column);
 
-        if (a <= 1 || b <= 1) {
+        if (a <= 1 && b <= 1) {
             toLine = line + a;
             toColumn = column + b;
             return true;
         };
 
-        /* public static boolean isUnderAttack(ChessBoard board, int line, int column) {
-            return ;
-        } */
+        if (chessBoard.board[toLine][toColumn] != null) {
+            if (!chessBoard.board[toLine][toColumn].getColor().equals(color)) return true;
+        } else {
+            return true;
+        };
 
+        return false;
+    };
+
+
+
+    public boolean isUnderAttack(ChessBoard board, int line, int column){
+        for(int i = 0; i < 8; i ++) {
+            for(int j = 0; j < 8; j ++) {
+                var piece = board.board[i][j];
+                if (piece != null && !piece.getColor().equals(color)
+                        && piece.canMoveToPosition(board, i, j, line, column)) return true;
+            }
+        }
         return false;
     };
 

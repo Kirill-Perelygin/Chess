@@ -20,6 +20,12 @@ public class Bishop extends ChessPiece {
         if (Math.abs(toLine - line) == Math.abs(toColumn - column))
             return true;
 
+        if (chessBoard.board[toLine][toColumn] != null) {
+            if (!chessBoard.board[toLine][toColumn].getColor().equals(color)) return true;
+        } else {
+            return true;
+        };
+
         return false;
     };
 
